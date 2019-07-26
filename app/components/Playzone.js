@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Controls } from './Controls'
 
-import styles from './Playzone.css';
+import styles from './Playzone.scss';
 
 export default class Playzone extends Component {
   constructor(props, context) {
