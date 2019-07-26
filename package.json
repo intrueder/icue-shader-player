@@ -125,7 +125,7 @@
     "react-dom": "16.8.6",
     "react-hot-loader": "4.3.12",
     "react-redux": "7.1.0",
-    "redux": "3.7.2",
+    "redux": "4.0.4",
     "redux-thunk": "2.3.0",
     "source-map-support": "0.5.12"
   },
