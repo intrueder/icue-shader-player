@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Controls } from './Controls'
+import { Controls } from './Controls';
 
 import styles from './Playzone.scss';
 
@@ -31,10 +31,10 @@ export default class Playzone extends Component {
   }
 
   render() {
-    const { framerate, size } = this.props;
+    const { framerate, size, onClick, playing } = this.props;
     return (
       <div className="Playzone">
-        <Controls onClick={this.props.onClick} playing={this.props.playing} />
+        <Controls onClick={onClick} playing={playing} />
         <div>
           <div className={styles.framerate}>{`${framerate} fps`}</div>
           <canvas id="preview" ref={this.setCanvasRef} width={size.x} height={size.y} />

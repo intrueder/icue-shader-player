@@ -1,5 +1,5 @@
 import {
-  UPDATE_GLSL, UPDATE_JS, UPDATE_UNIFORM, SET_EFFECT_RESOLUTION, SET_FRAME
+  UPDATE_GLSL, UPDATE_JS, SET_EFFECT_RESOLUTION, SET_FRAME
 } from '../actions';
 import preProcess from '../utils/preprocessor';
 
@@ -14,7 +14,7 @@ const INITIAL_STATE = {
   frame: null // mutable, reference is unchanged most of the time
 };
 
-export default function glsl_reducer(state = INITIAL_STATE, action) {
+export default function glslReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case UPDATE_GLSL: {
       const s = Object.assign({}, state);
