@@ -7,7 +7,7 @@ import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import merge from 'webpack-merge';
-import UglifyJSPlugin from 'uglifyjs-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
 import baseConfig from './webpack.config.base';
 import CheckNodeEnv from './internals/scripts/CheckNodeEnv';
 
@@ -162,11 +162,6 @@ export default merge.smart(baseConfig, {
       NODE_ENV: 'production'
     }),
 
-    new UglifyJSPlugin({
-      parallel: true,
-      sourceMap: true
-    }),
-
     new ExtractTextPlugin('style.css'),
 
     new BundleAnalyzerPlugin({
@@ -174,4 +169,12 @@ export default merge.smart(baseConfig, {
       openAnalyzer: process.env.OPEN_ANALYZER === 'true'
     }),
   ],
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        parallel: true,
+        sourceMap: true
+      }),
+    ],
+  }
 });
