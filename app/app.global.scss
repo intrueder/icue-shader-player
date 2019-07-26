@@ -1,0 +1,105 @@
+/*
+ * @NOTE: Prepend a `~` to css file paths that are in your node_modules
+ *        See https://github.com/webpack-contrib/sass-loader#imports
+ */
+@import "~font-awesome/css/font-awesome.css";
+
+$fgprimary: #f0edee;
+$fgsecondary: #d9b203;
+$bgmain: #242119;
+$bgback: #1d1d1d;
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: $bgback;
+  color: $fgprimary;
+  font-family: "Consolas";
+}
+
+#app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
+.App {
+  border-radius: 5px;
+  box-shadow: 0 10px 20px rgba(black, 0.3);
+  overflow: hidden;
+  width: 630px;
+  height: 400px;
+
+  .Playzone {
+    width: 630px;
+    height: 212px;
+    background-size: cover;
+    position: relative;
+
+    &:hover {
+      .Controls {
+        background: rgba($bgmain, 0.6);
+      }
+    }
+
+    .Controls {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      height: 212px;
+      box-sizing: border-box;
+      background: rgba($bgmain, 0.3);
+      justify-content: space-around;
+      padding: 20px 0;
+      align-items: center;
+      transition: background 0.125s ease;
+
+      .fa-play,
+      .fa-pause {
+        transform: scale(2);
+      }
+    }
+  }
+
+  .EffectList {
+    width: 630px;
+    height: 188px;
+    padding: 0;
+    margin: 0;
+    background: lighten($bgmain, 10);
+    overflow-y: auto;
+
+    li {
+      display: flex;
+      padding: 10px;
+      box-sizing: border-box;
+      border-bottom: 1px solid rgba($bgmain, 0.2);
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 300;
+      transition: background 0.125s ease;
+
+      &:hover {
+        background: lighten($bgmain, 5);
+        cursor: pointer;
+        color: $fgsecondary;
+      }
+
+      &.active {
+        background: lighten($bgmain, 2);
+      }
+
+      .title {
+        margin-left: 10px;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+      }
+    }
+  }
+}

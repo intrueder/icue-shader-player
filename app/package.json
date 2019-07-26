@@ -1,0 +1,20 @@
+{
+  "name": "icue-shader-player-app",
+  "productName": "icue-shader-player-app",
+  "version": "0.1.2",
+  "description": "Electron application to play GLSL shaders on Corsair keyboard",
+  "main": "./main.prod.js",
+  "author": {
+    "name": "Tymur Mudzhyri",
+    "email": "intrueder@gmail.com",
+    "url": "https://github.com/intrueder"
+  },
+  "scripts": {
+    "electron-rebuild": "node -r babel-register ../internals/scripts/ElectronRebuild.js",
+    "postinstall": "npm run electron-rebuild"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "cue-sdk": "0.1.2"
+  }
+}
