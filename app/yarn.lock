@@ -68,12 +68,12 @@ core-util-is@~1.0.0:
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
   integrity sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
 
-cue-sdk@0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/cue-sdk/-/cue-sdk-0.1.2.tgz#52786f6d464f832c8d84030714fc014b53ce2506"
-  integrity sha512-cUzKssMGMF9XOHgjaT/u1sO3bfJyn2/oNRy0XSQI3IlT/O68tnBmjazm641fJMVFLo6Yx3G3GIvmCB/8bRRJUw==
+cue-sdk@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/cue-sdk/-/cue-sdk-1.0.0.tgz#f8b80085688b0380a11313042ed1795cb67f50f8"
+  integrity sha512-MxKyOEg17NMMKKhgCdFCQfSqtnqapOtXAVu52llQbWA8x8HRYnXwviDDSf6AmBhz0qq9IQ2bvRdxJugHepggEg==
   dependencies:
-    node-addon-api "1.6.3"
+    node-addon-api "1.7.1"
     node-pre-gyp "0.13.0"
 
 debug@^2.1.2:
@@ -243,10 +243,10 @@ needle@^2.2.1:
     iconv-lite "^0.4.4"
     sax "^1.2.4"
 
-node-addon-api@1.6.3:
-  version "1.6.3"
-  resolved "https://registry.yarnpkg.com/node-addon-api/-/node-addon-api-1.6.3.tgz#3998d4593e2dca2ea82114670a4eb003386a9fe1"
-  integrity sha512-FXWH6mqjWgU8ewuahp4spec8LkroFZK2NicOv6bNwZC3kcwZUI8LeZdG80UzTSLLhK4T7MsgNwlYDVRlDdfTDg==
+node-addon-api@1.7.1:
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/node-addon-api/-/node-addon-api-1.7.1.tgz#cf813cd69bb8d9100f6bdca6755fc268f54ac492"
+  integrity sha512-2+DuKodWvwRTrCfKOeR24KIc5unKjOh8mz17NCzVnHWfjAdDqbfbjqh7gUT+BkXBRQM52+xCHciKWonJ3CbJMQ==
 
 node-pre-gyp@0.13.0:
   version "0.13.0"

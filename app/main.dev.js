@@ -63,7 +63,11 @@ app.on('ready', async () => {
     width: 800,
     height: 600,
     resizable: false,
-    webPreferences: { backgroundThrottling: false, webgl: true },
+    webPreferences: {
+      backgroundThrottling: false,
+      webgl: true,
+      nodeIntegration: true
+    },
   });
 
   mainWindow.loadURL(`file://${__dirname}/app.html`);
