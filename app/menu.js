@@ -1,7 +1,6 @@
 import { app, Menu, shell } from 'electron';
 
 export default class MenuBuilder {
-
   constructor(mainWindow) {
     this.mainWindow = mainWindow;
   }
@@ -183,7 +182,7 @@ export default class MenuBuilder {
     return [
       submenuFile,
       submenuView,
-      //submenuHelp
+      // submenuHelp
     ];
   }
 }

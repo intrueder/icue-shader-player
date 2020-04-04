@@ -74,4 +74,7 @@ dll
 main.js
 main.js.map
 
+# Generated
+app/utils/glsl-parser.js
+
 __snapshots__

@@ -17,7 +17,7 @@ const INITIAL_STATE = {
 export default function glslReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case UPDATE_GLSL: {
-      const s = Object.assign({}, state);
+      const s = { ...state };
       let { src } = action.payload;
       s.glsl = src;
       try {
@@ -29,7 +29,7 @@ export default function glslReducer(state = INITIAL_STATE, action) {
         s.uniforms = s.uniforms.filter(u => names.includes(u.name));
         names = s.uniforms.map(u => u.name);
         uniforms = uniforms.filter(u => !names.includes(u.name));
-        s.uniforms = s.uniforms.concat(uniforms).map(u => Object.assign({ value: 1 }, u));
+        s.uniforms = s.uniforms.concat(uniforms).map(u => ({ value: 1, ...u }));
       } catch (e) {
         s.js = e;
       }
@@ -37,17 +37,17 @@ export default function glslReducer(state = INITIAL_STATE, action) {
       return s;
     }
     case UPDATE_JS: {
-      const s = Object.assign({}, state);
+      const s = { ...state };
       s.js = action.payload.src;
       return s;
     }
     case SET_EFFECT_RESOLUTION: {
-      const s = Object.assign({}, state);
+      const s = { ...state };
       s.resolution = action.payload.resolution;
       return s;
     }
     case SET_FRAME: {
-      const s = Object.assign({}, state);
+      const s = { ...state };
       s.frameId += 1;
       s.frame = action.payload.frame;
       return s;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Playzone from './Playzone.container';
-import { EffectList } from './EffectList'
+import { EffectList } from './EffectList';
 import API from '../utils/api';
 
 class App extends Component {
@@ -15,7 +15,7 @@ class App extends Component {
     };
     this.api = new API();
     this.api.loadEffects();
-    this.effects = Object.keys(this.api.glslEffects).map((e, i) => ({ id: (i + 1), title: e}));
+    this.effects = Object.keys(this.api.glslEffects).map((e, i) => ({ id: (i + 1), title: e }));
     this.api.detailLevel = this.state.detailLevel;
     this.leds = this.api.getLeds();
     this.setCanvasRef = element => {
@@ -101,7 +101,7 @@ class App extends Component {
   }
 }
 
-App.Props = {
+App.propTypes = {
   updateGLSL: PropTypes.func.isRequired,
   updateJS: PropTypes.func.isRequired,
   glslSource: PropTypes.string,

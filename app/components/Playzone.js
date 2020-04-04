@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Controls } from './Controls';
+import Controls from './Controls';
 
 import styles from './Playzone.scss';
 
@@ -31,7 +31,9 @@ export default class Playzone extends Component {
   }
 
   render() {
-    const { framerate, size, onClick, playing } = this.props;
+    const {
+      framerate, size, onClick, playing
+    } = this.props;
     return (
       <div className="Playzone">
         <Controls onClick={onClick} playing={playing} />
@@ -48,11 +50,14 @@ export default class Playzone extends Component {
 Playzone.propTypes = {
   frame: PropTypes.shape(),
   size: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }),
-  framerate: PropTypes.number
+  framerate: PropTypes.number,
+  onClick: PropTypes.func.isRequired,
+  playing: PropTypes.bool
 };
 
 Playzone.defaultProps = {
   frame: null,
   size: { x: 630, y: 212 },
-  framerate: 0
+  framerate: 0,
+  playing: false
 };

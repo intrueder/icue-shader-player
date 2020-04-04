@@ -7,9 +7,8 @@ import { dependencies } from '../../package.json';
   if (!dependencies) return;
 
   const dependenciesKeys = Object.keys(dependencies);
-  const nativeDeps =
-    fs.readdirSync('node_modules')
-      .filter(folder => fs.existsSync(`node_modules/${folder}/binding.gyp`));
+  const nativeDeps = fs.readdirSync('node_modules')
+    .filter(folder => fs.existsSync(`node_modules/${folder}/binding.gyp`));
 
   try {
     // Find the reason for why the dependency is installed. If it is installed

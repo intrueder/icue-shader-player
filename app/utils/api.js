@@ -122,8 +122,8 @@ class API {
           r = transform(r);
           g = transform(g);
           b = transform(b);
-          for (let yi = y; yi <= y+step && yi < maxY; yi += 1) {
-            for (let xi = x; xi <= x+step && xi < maxX; xi += 1) {
+          for (let yi = y; yi <= y + step && yi < maxY; yi += 1) {
+            for (let xi = x; xi <= x + step && xi < maxX; xi += 1) {
               const i = getpos(xi, yi);
               if (i < N) {
                 frame.data[i + 0] = r;
@@ -153,19 +153,19 @@ class API {
 
       for (let li = 0; li < ln; li++) {
         let led = leds[li];
-        
-        let x = led.x * (maxX - 1);
-        let y = led.y * (maxY - 1);
-        
+
+        const x = led.x * (maxX - 1);
+        const y = led.y * (maxY - 1);
+
         // linear interpolation
-        var xl = Math.floor(x);
-        var yl = Math.floor(y);
-        var xr = Math.ceil(x);
-        var yr = Math.ceil(y);
-        var a1 = x - xl;
-        var a2 = xr - x;
-        var b1 = y - yl;
-        var b2 = yr - y;
+        const xl = Math.floor(x);
+        const yl = Math.floor(y);
+        const xr = Math.ceil(x);
+        const yr = Math.ceil(y);
+        const a1 = x - xl;
+        const a2 = xr - x;
+        const b1 = y - yl;
+        const b2 = yr - y;
         const posl = getpos(xl, yl);
         const col = led.rgb || [0, 0, 0];
         col[0] = frame.data[posl + 0];
@@ -177,14 +177,13 @@ class API {
             // already here
           } else if (yl == yr) {
             col[i] = (a1 * frame.data[getpos(xl, yl) + i] + a2 * frame.data[getpos(xr, yl) + i]);
-          }
-          else if (xl == xr) {
+          } else if (xl == xr) {
             col[i] = (b1 * frame.data[getpos(xl, yl) + i] + b2 * frame.data[getpos(xl, yr) + i]);
           } else {
             col[i] = (b1 * (a1 * frame.data[getpos(xl, yl) + i] + a2 * frame.data[getpos(xr, yl) + i]) + b2 * (a1 * frame.data[getpos(xl, yr) + i] + a2 * frame.data[getpos(xr, yr) + i]));
           }
         }
-        
+
         led.rgb = col;
       }
 
@@ -204,7 +203,7 @@ class API {
       //     rgb: col
       //   };
       // });
-    }
+    };
   }
 
   loadEffects() {
@@ -213,7 +212,7 @@ class API {
     const dir = path.join(rootPath, 'shaders');
     const files = fs.readdirSync(dir);
     for (let fileName of files) {
-      let src = fs.readFileSync(path.join(dir, fileName), 'utf8');
+      const src = fs.readFileSync(path.join(dir, fileName), 'utf8');
       this.glslEffects[fileName.split('.')[0]] = src;
     }
 
@@ -231,11 +230,11 @@ class API {
       params: {
         color1: {
           type: 'vec3',
-          defaultValue: stdlib.Vec3(.5, .0, .5)
+          defaultValue: stdlib.Vec3(0.5, 0.0, 0.5)
         },
         color2: {
           type: 'vec3',
-          defaultValue: stdlib.Vec3(.5, .0, .0)
+          defaultValue: stdlib.Vec3(0.5, 0.0, 0.0)
         },
         duration: {
           type: 'number',
@@ -253,10 +252,10 @@ class API {
     const xmin = leds.reduce((prev, curr) => Math.min(prev, curr.left), xmax);
     const ymin = leds.reduce((prev, curr) => Math.min(prev, curr.top), ymax);
     const avgsz = leds.reduce((prev, curr) => prev + curr.width, 0) / leds.length;
-    //this._store.setResolution(id, xmax - xmin + Math.ceil(avgsz), ymax - ymin + Math.ceil(avgsz));
+    // this._store.setResolution(id, xmax - xmin + Math.ceil(avgsz), ymax - ymin + Math.ceil(avgsz));
     this._store.setResolution(id, 210, 70);
 
-    //const ledsPositions = leds.map(l => ({ id: l.ledId, x: l.left - xmin, y: l.top - ymin }));
+    // const ledsPositions = leds.map(l => ({ id: l.ledId, x: l.left - xmin, y: l.top - ymin }));
     const ledsPositions = leds.map(l => {
       const larr = [];
       // const step = this.detailLevel;
@@ -268,7 +267,7 @@ class API {
       larr.push({ id: l.ledId, x: (l.left - xmin) / (xmax - xmin), y: (l.top - ymin) / (ymax - ymin) });
       return larr;
     }).reduce((prev, curr) => prev.concat(curr), []);
-    //console.log(ledsPositions);
+    // console.log(ledsPositions);
     const runEffect = this._createEffectRunner(effectName, id, ledsPositions);
     const eff = () => {
       this._store.updateTime(id);

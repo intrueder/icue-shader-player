@@ -1,17 +1,28 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-export class Controls extends Component {
-  render() {
-    if (!this.props.playing) {
-      var playpause = <i id="play" onClick={this.props.onClick} className="fa fa-fw fa-play"></i>;
-    } else {
-      var playpause = <i id="pause" onClick={this.props.onClick} className="fa fa-fw fa-pause"></i>;
-    }
-
-    return (
-      <div className="Controls">
-        {playpause}
-      </div>
-    );
+const Controls = ({ playing, onClick }) => {
+  let playpause;
+  if (!playing) {
+    playpause = <i id="play" onClick={onClick} className="fa fa-fw fa-play" />;
+  } else {
+    playpause = <i id="pause" onClick={onClick} className="fa fa-fw fa-pause" />;
   }
+
+  return (
+    <div className="Controls">
+      {playpause}
+    </div>
+  );
 };
+
+Controls.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  playing: PropTypes.bool
+};
+
+Controls.defaultProps = {
+  playing: false
+};
+
+export default Controls;
