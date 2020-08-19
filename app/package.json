@@ -1,7 +1,7 @@
 {
   "name": "icue-shader-player-app",
   "productName": "icue-shader-player-app",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Electron application to play GLSL shaders on Corsair keyboard",
   "main": "./main.prod.js",
   "author": {
@@ -15,6 +15,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "cue-sdk": "1.2.0"
+    "cue-sdk": "1.4.1"
   }
 }

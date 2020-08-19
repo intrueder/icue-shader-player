@@ -1,7 +1,7 @@
 {
   "name": "icue-shader-player",
   "productName": "iCUE Shader Player",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Electron application to play GLSL shaders on Corsair keyboard",
   "scripts": {
     "build": "concurrently \"yarn run build-main\" \"yarn run build-renderer\"",
@@ -21,7 +21,7 @@
     "pack": "yarn run build && electron-builder --dir",
     "dist": "yarn run build && electron-builder --win --x64"
   },
-  "browserslist": "electron 8.0",
+  "browserslist": "electron 9.0",
   "build": {
     "productName": "iCUE Shader Player",
     "appId": "com.intrueder.icueshaderplayer",
@@ -78,14 +78,14 @@
     "chalk": "4.0.0",
     "concurrently": "5.1.0",
     "cross-env": "7.0.2",
-    "cross-spawn": "7.0.2",
+    "cross-spawn": "7.0.3",
     "css-loader": "3.4.2",
     "detect-port": "1.3.0",
-    "electron": "8.2.4",
-    "electron-builder": "22.4.1",
-    "electron-debug": "3.0.1",
-    "electron-devtools-installer": "2.2.4",
-    "electron-rebuild": "1.10.1",
+    "electron": "9.2.1",
+    "electron-builder": "22.8.0",
+    "electron-debug": "3.1.0",
+    "electron-devtools-installer": "3.1.1",
+    "electron-rebuild": "1.11.0",
     "eslint": "6.8.0",
     "eslint-config-airbnb": "18.1.0",
     "eslint-formatter-pretty": "3.0.1",
@@ -108,12 +108,12 @@
     "style-loader": "1.1.3",
     "stylelint": "13.3.0",
     "stylelint-config-standard": "20.0.0",
-    "terser-webpack-plugin": "2.3.5",
-    "url-loader": "4.0.0",
-    "webpack": "4.42.1",
-    "webpack-bundle-analyzer": "3.6.1",
-    "webpack-cli": "3.3.11",
-    "webpack-dev-server": "3.10.3",
+    "terser-webpack-plugin": "4.1.0",
+    "url-loader": "4.1.0",
+    "webpack": "4.44.1",
+    "webpack-bundle-analyzer": "3.8.0",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "3.11.0",
     "webpack-merge": "4.2.2"
   },
   "dependencies": {
@@ -122,11 +122,11 @@
     "raf": "3.4.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-hot-loader": "4.12.20",
-    "react-redux": "7.2.0",
+    "react-hot-loader": "4.12.21",
+    "react-redux": "7.2.1",
     "redux": "4.0.5",
     "redux-thunk": "2.3.0",
-    "source-map-support": "0.5.16"
+    "source-map-support": "0.5.19"
   },
   "devEngines": {
     "node": ">=10.x",
