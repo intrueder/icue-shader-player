@@ -17,5 +17,6 @@ Any effect can be modified or new effects can be added to the player. Effects ca
 
 ## Screenshots
 
-![colorripple](screenshots/colorripple.png)
-![colorfulvoronoi](screenshots/colorfulvoronoi.png)
+<img src="screenshots/colorripple.png" width="600px"></img>
+<img src="screenshots/colorfulvoronoi.png" width="600px"></img>
+<img src="screenshots/playback.gif" width="600px"></img>
