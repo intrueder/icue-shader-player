@@ -4,7 +4,7 @@ import Playzone from './Playzone.container';
 import { EffectList } from './EffectList';
 import API from '../utils/api';
 
-class App extends Component {
+class Home extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
@@ -50,7 +50,12 @@ class App extends Component {
       }
 
       const processedFrame = this.canvasCtx.getImageData(0, 0, frame.width, frame.height);
-      this.props.setFrame(processedFrame);
+      const imageDataCopy = new ImageData(
+        new Uint8ClampedArray(processedFrame.data),
+        processedFrame.width,
+        processedFrame.height
+      )
+      this.props.setFrame(imageDataCopy);
       return processedFrame;
     });
 
@@ -101,11 +106,11 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
+Home.propTypes = {
   updateGLSL: PropTypes.func.isRequired,
   updateJS: PropTypes.func.isRequired,
   glslSource: PropTypes.string,
   uniforms: PropTypes.array
 };
 
-export default App;
+export default Home;
