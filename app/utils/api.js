@@ -208,8 +208,10 @@ class API {
 
   loadEffects() {
     this.glslEffects = {};
-    const rootPath = process.resourcesPath || __dirname;
-    const dir = path.join(rootPath, 'shaders');
+    const RESOURCES_PATH = typeof process === 'object'
+      ? path.join(process.resourcesPath, 'resources')
+      : path.join(__dirname, '../resources');
+    const dir = path.join(RESOURCES_PATH, 'shaders');
     const files = fs.readdirSync(dir);
     for (let fileName of files) {
       const src = fs.readFileSync(path.join(dir, fileName), 'utf8');

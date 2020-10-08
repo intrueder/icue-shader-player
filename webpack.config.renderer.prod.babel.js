@@ -30,10 +30,9 @@ export default merge(baseConfig, {
   ],
 
   output: {
-    path: path.resolve(__dirname, 'app/dist'),
+    path: path.join(__dirname, 'app/dist'),
     publicPath: './dist/',
-    filename: 'renderer.prod.js',
-    chunkFilename: './dist/[name].bundle.js'
+    filename: 'renderer.prod.js'
   },
 
   module: {
@@ -80,6 +79,9 @@ export default merge(baseConfig, {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: './'
+            }
           },
           {
             loader: 'css-loader',
