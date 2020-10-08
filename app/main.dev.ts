@@ -66,19 +66,15 @@ const createWindow = async () => {
 
   mainWindow = new BrowserWindow({
     show: false,
-    width: 1024,
-    height: 728,
+    width: 800,
+    height: 600,
+    resizable: false,
     icon: getAssetPath('icon.png'),
-    webPreferences:
-      (process.env.NODE_ENV === 'development' ||
-        process.env.E2E_BUILD === 'true') &&
-      process.env.ERB_SECURE !== 'true'
-        ? {
-            nodeIntegration: true,
-          }
-        : {
-            preload: path.join(__dirname, 'dist/renderer.prod.js'),
-          },
+    webPreferences: {
+      nodeIntegration: true,
+      webgl: true,
+      backgroundThrottling: false
+    }
   });
 
   mainWindow.loadURL(`file://${__dirname}/app.html`);
