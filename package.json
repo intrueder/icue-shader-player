@@ -1,7 +1,7 @@
 {
   "name": "icue-shader-player",
   "productName": "iCUE Shader Player",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Electron application to play GLSL shaders on Corsair keyboard",
   "scripts": {
     "build": "concurrently \"yarn build-main\" \"yarn build-renderer\"",

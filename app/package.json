@@ -1,7 +1,7 @@
 {
   "name": "icue-shader-player-app",
   "productName": "icue-shader-player-app",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Electron application to play GLSL shaders on Corsair keyboard",
   "main": "./main.prod.js",
   "author": {
