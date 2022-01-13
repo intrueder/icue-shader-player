@@ -2,20 +2,20 @@
 # yarn lockfile v1
 
 
-cue-sdk@1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/cue-sdk/-/cue-sdk-1.4.1.tgz#6e4af9b35b9a22742a59bf9296fa03036f71e780"
-  integrity sha512-JdjKI65mZChAsfw0kWJl5+Gpmwebg/taf+5ziVykZnu2ALLU/hYJSIHlG4tNmGtg/M0lFmEqA/H+eG6kMXkqIA==
+cue-sdk@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/cue-sdk/-/cue-sdk-2.2.0.tgz#681fb0c3dcf65f58da2b5f3c47e66f354dfccc1d"
+  integrity sha512-EE+tEbFaxwxf81Ml8WUZUmDX+X/3bElbG3s9icSg+MV217HKS9HT03xg1xPznYxOPdI/ZDyIGzeVh/Nh/WJ22w==
   dependencies:
-    node-addon-api "3.0.0"
-    node-gyp-build "4.2.3"
+    node-addon-api "4.2.0"
+    node-gyp-build "4.3.0"
 
-node-addon-api@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/node-addon-api/-/node-addon-api-3.0.0.tgz#812446a1001a54f71663bed188314bba07e09247"
-  integrity sha512-sSHCgWfJ+Lui/u+0msF3oyCgvdkhxDbkCS6Q8uiJquzOimkJBvX6hl5aSSA7DR1XbMpdM8r7phjcF63sF4rkKg==
+node-addon-api@4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/node-addon-api/-/node-addon-api-4.2.0.tgz#117cbb5a959dff0992e1c586ae0393573e4d2a87"
+  integrity sha512-eazsqzwG2lskuzBqCGPi7Ac2UgOoMz8JVOXVhTvvPDYhthvNpefx8jWD8Np7Gv+2Sz0FlPWZk0nJV0z598Wn8Q==
 
-node-gyp-build@4.2.3:
-  version "4.2.3"
-  resolved "https://registry.yarnpkg.com/node-gyp-build/-/node-gyp-build-4.2.3.tgz#ce6277f853835f718829efb47db20f3e4d9c4739"
-  integrity sha512-MN6ZpzmfNCRM+3t57PTJHgHyw/h4OWnZ6mR8P5j/uZtqQr46RRuDE/P+g3n0YR/AiYXeWixZZzaip77gdICfRg==
+node-gyp-build@4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/node-gyp-build/-/node-gyp-build-4.3.0.tgz#9f256b03e5826150be39c764bf51e993946d71a3"
+  integrity sha512-iWjXZvmboq0ja1pUGULQBexmxq8CV4xBhX7VDOTbL7ZR4FOowwY/VOtRxBN/yKxmdGoIp4j5ysNT4u3S2pDQ3Q==
